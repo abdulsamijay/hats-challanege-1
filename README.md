@@ -15,7 +15,7 @@ You will need to install foundry to run the exploit. Link for installtion [`Foun
 - Funtions such as `SwapForNewMon()`, `Swap(id)` are provided to get a better mon either by burning the current mon or by swapping it to someone who has put their up  their mon for sale.
 - User should play the game in such a way, that `game.flagHolder` should return the user's address, beating the superMon.
 
-### :hat: The solution 
+### :cowboy_hat_face: The solution 
 There are a few pre-requisite that one needs to know before go about hacking. The knowledge regarding ERC721 & IERC721Receiver is essential in this case. In order to win our address needs to be the `flagHolder` which is set in `fight()` method in [Game.sol](./src/Game.sol) after comparing the balances of both addresses `attacker` & `flagHolder`. There is no way to beat the superMons by strength. So what do we do ? We borrow more mons to do our bidding! i.e `attacker's mons` > `flagHolder mons`.
 - We start by deploying 3 contracts, an attacker [`CTF.sol`](./src/CTF.sol) & 2 [`helper.sol`](./src/Helper.sol) contracts.
 - Helper contracts have a function `swap(id)` for swapping their mons with the ones that are up for sale.
